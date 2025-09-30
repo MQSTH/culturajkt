@@ -112,15 +112,13 @@
             text-align: left;
         }
 
+        /* ========== KODE BARU: CAROUSEL STYLES ========== */
         .carousel-container {
             position: relative;
             width: 100%;
             overflow: hidden;
             border-radius: 16px;
-            background: url('img/rby.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background: rgba(0, 0, 0, 0.3);
         }
 
         .carousel-wrapper {
@@ -136,7 +134,7 @@
         .carousel-slide img {
             width: 100%;
             aspect-ratio: 16/9;
-            object-fit: contain;
+            object-fit: cover;
             display: block;
             border-radius: 16px;
         }
@@ -150,7 +148,7 @@
             border: 2px solid rgba(255, 255, 255, 0.3);
             width: 50px;
             height: 50px;
-            border-radius: 10px;
+            border-radius: 50%;
             cursor: pointer;
             font-size: 1.5rem;
             display: flex;
@@ -162,7 +160,7 @@
         }
 
         .carousel-btn:hover {
-            box-shadow: 0 0 10px rgb(0, 174, 174);
+            background: rgba(0, 174, 174, 0.8);
             border-color: rgba(0, 174, 174, 1);
             transform: translateY(-50%) scale(1.1);
         }
@@ -195,8 +193,8 @@
         }
 
         .carousel-btn-fullscreen:hover {
-            box-shadow: 0 0 10px #00aeae;
-            border-color: #00aeae;
+            background: rgba(0, 174, 174, 0.8);
+            border-color: rgba(0, 174, 174, 1);
             transform: scale(1.1);
         }
 
@@ -239,6 +237,7 @@
             z-index: 10;
             border: 2px solid rgba(255, 255, 255, 0.3);
         }
+        /* ========== AKHIR KODE BARU CAROUSEL ========== */
 
         .hero-image-container {
             background: url('img/rby.png');
@@ -593,94 +592,8 @@
             height: 30px;
         }
 
-        @media screen and (max-width: 1196px) {
-            .content-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            .content-main {
-                grid-column: 1;
-                grid-row: 1;
-                order: 1;
-            }
-
-            .sidebar-left {
-                grid-column: 1;
-                grid-row: 2;
-                order: 2;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .carousel-btn {
-                width: 48px;
-                height: 48px;
-                font-size: 1.4rem;
-            }
-
-            .carousel-btn-fullscreen {
-                width: 44px;
-                height: 44px;
-            }
-
-            .carousel-btn-fullscreen svg {
-                width: 19px;
-                height: 19px;
-            }
-
-            .carousel-counter {
-                font-size: 0.98rem;
-            }
-        }
-
-        @media screen and (max-width: 1024px) {
-            section.content-collection {
-                padding: 48px 48px;
-            }
-
-            .title-content-collection {
-                font-size: 2.4rem;
-                margin-top: 24px;
-                margin-bottom: 24px;
-            }
-
-            .carousel-btn {
-                width: 45px;
-                height: 45px;
-            }
-
-            .carousel-btn-fullscreen {
-                width: 42px;
-                height: 42px;
-            }
-
-            .carousel-counter {
-                font-size: 0.95rem;
-            }
-
-            .heading-downloads,
-            .heading-discussion {
-                font-size: 1.8rem;
-            }
-
-            .btn-discussion {
-                font-size: 1.2rem;
-            }
-        }
-
+        /* ========== KODE BARU: RESPONSIVE CAROUSEL ========== */
         @media screen and (max-width: 768px) {
-            section.content-collection {
-                padding: 32px 32px;
-            }
-
-            .title-content-collection {
-                font-size: 2rem;
-                margin-top: 16px;
-                margin-bottom: 24px;
-            }
-
             .carousel-btn {
                 width: 40px;
                 height: 40px;
@@ -711,6 +624,134 @@
                 bottom: 15px;
                 font-size: 0.9rem;
                 padding: 6px 14px;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            .carousel-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+
+            .carousel-btn-prev {
+                left: 8px;
+            }
+
+            .carousel-btn-next {
+                right: 8px;
+            }
+
+            .carousel-btn-fullscreen {
+                width: 35px;
+                height: 35px;
+                top: 10px;
+                right: 10px;
+            }
+
+            .carousel-btn-fullscreen svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            .carousel-counter {
+                bottom: 12px;
+                font-size: 0.85rem;
+                padding: 5px 12px;
+            }
+        }
+        /* ========== AKHIR KODE BARU RESPONSIVE CAROUSEL ========== */
+
+        @media screen and (max-width: 1196px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .content-main {
+                grid-column: 1;
+                grid-row: 1;
+                order: 1;
+            }
+
+            .sidebar-left {
+                grid-column: 1;
+                grid-row: 2;
+                order: 2;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            /* ========== KODE BARU: RESPONSIVE CAROUSEL 1196px ========== */
+            .carousel-btn {
+                width: 48px;
+                height: 48px;
+                font-size: 1.4rem;
+            }
+
+            .carousel-btn-fullscreen {
+                width: 44px;
+                height: 44px;
+            }
+
+            .carousel-btn-fullscreen svg {
+                width: 19px;
+                height: 19px;
+            }
+
+            .carousel-counter {
+                font-size: 0.98rem;
+            }
+            /* ========== AKHIR KODE BARU RESPONSIVE CAROUSEL 1196px ========== */
+        }
+
+        @media screen and (max-width: 1024px) {
+            section.content-collection {
+                padding: 48px 48px;
+            }
+
+            .title-content-collection {
+                font-size: 2.4rem;
+                margin-top: 24px;
+                margin-bottom: 24px;
+            }
+
+            .heading-downloads,
+            .heading-discussion {
+                font-size: 1.8rem;
+            }
+
+            .btn-discussion {
+                font-size: 1.2rem;
+            }
+
+            /* ========== KODE BARU: RESPONSIVE CAROUSEL 1024px ========== */
+            .carousel-btn {
+                width: 45px;
+                height: 45px;
+            }
+
+            .carousel-btn-fullscreen {
+                width: 42px;
+                height: 42px;
+            }
+
+            .carousel-counter {
+                font-size: 0.95rem;
+            }
+            /* ========== AKHIR KODE BARU RESPONSIVE CAROUSEL 1024px ========== */
+        }
+
+        @media screen and (max-width: 768px) {
+            section.content-collection {
+                padding: 32px 32px;
+            }
+
+            .title-content-collection {
+                font-size: 2rem;
+                margin-top: 16px;
+                margin-bottom: 24px;
             }
 
             .heading-section,
@@ -745,38 +786,6 @@
             .title-content-collection {
                 font-size: 1.8rem;
                 margin-bottom: 20px;
-            }
-
-            .carousel-btn {
-                width: 35px;
-                height: 35px;
-                font-size: 1rem;
-            }
-
-            .carousel-btn-prev {
-                left: 8px;
-            }
-
-            .carousel-btn-next {
-                right: 8px;
-            }
-
-            .carousel-btn-fullscreen {
-                width: 35px;
-                height: 35px;
-                top: 10px;
-                right: 10px;
-            }
-
-            .carousel-btn-fullscreen svg {
-                width: 16px;
-                height: 16px;
-            }
-
-            .carousel-counter {
-                bottom: 12px;
-                font-size: 0.85rem;
-                padding: 5px 12px;
             }
 
             .card-compatibility,
@@ -878,6 +887,27 @@
                 font-size: 1.6rem;
             }
 
+            .heading-downloads,
+            .heading-discussion {
+                font-size: 1.3rem;
+            }
+
+            .btn-download,
+            .btn-discussion {
+                font-size: 0.72rem;
+                gap: 8px;
+            }
+
+            .text-description {
+                font-size: 0.95rem;
+            }
+
+            .downloads,
+            .discussion {
+                margin-top: 24px;
+            }
+
+            /* ========== KODE BARU: RESPONSIVE CAROUSEL 375px ========== */
             .carousel-btn {
                 width: 32px;
                 height: 32px;
@@ -909,26 +939,7 @@
                 font-size: 0.8rem;
                 padding: 4px 10px;
             }
-
-            .heading-downloads,
-            .heading-discussion {
-                font-size: 1.3rem;
-            }
-
-            .btn-download,
-            .btn-discussion {
-                font-size: 0.72rem;
-                gap: 8px;
-            }
-
-            .text-description {
-                font-size: 0.95rem;
-            }
-
-            .downloads,
-            .discussion {
-                margin-top: 24px;
-            }
+            /* ========== AKHIR KODE BARU RESPONSIVE CAROUSEL 375px ========== */
         }
 
         @media screen and (max-width: 320px) {
@@ -940,38 +951,6 @@
                 font-size: 1.4rem;
                 margin-top: 8px;
                 margin-bottom: 16px;
-            }
-
-            .carousel-btn {
-                width: 28px;
-                height: 28px;
-                font-size: 0.85rem;
-            }
-
-            .carousel-btn-prev {
-                left: 5px;
-            }
-
-            .carousel-btn-next {
-                right: 5px;
-            }
-
-            .carousel-btn-fullscreen {
-                width: 28px;
-                height: 28px;
-                top: 6px;
-                right: 6px;
-            }
-
-            .carousel-btn-fullscreen svg {
-                width: 12px;
-                height: 12px;
-            }
-
-            .carousel-counter {
-                bottom: 8px;
-                font-size: 0.75rem;
-                padding: 3px 8px;
             }
 
             .card-compatibility,
@@ -1085,6 +1064,40 @@
                 width: 18px;
                 height: 18px;
             }
+
+            /* ========== KODE BARU: RESPONSIVE CAROUSEL 320px ========== */
+            .carousel-btn {
+                width: 28px;
+                height: 28px;
+                font-size: 0.85rem;
+            }
+
+            .carousel-btn-prev {
+                left: 5px;
+            }
+
+            .carousel-btn-next {
+                right: 5px;
+            }
+
+            .carousel-btn-fullscreen {
+                width: 28px;
+                height: 28px;
+                top: 6px;
+                right: 6px;
+            }
+
+            .carousel-btn-fullscreen svg {
+                width: 12px;
+                height: 12px;
+            }
+
+            .carousel-counter {
+                bottom: 8px;
+                font-size: 0.75rem;
+                padding: 3px 8px;
+            }
+            /* ========== AKHIR KODE BARU RESPONSIVE CAROUSEL 320px ========== */
         }
     </style>
 </head>
@@ -1096,6 +1109,7 @@
         <div class="content-grid">
             <!-- Main content first in HTML source -->
             <div class="content-main">
+                <!-- ========== KODE BARU: CAROUSEL STRUCTURE ========== -->
                 <div class="carousel-container">
                     <div class="carousel-wrapper" id="carouselWrapper">
                         <div class="carousel-slide">
@@ -1107,75 +1121,25 @@
                         <div class="carousel-slide">
                             <img src="img/1758583655342~2.jpg" alt="Preview 3">
                         </div>
-                        <div class="carousel-slide">
-                            <img src="img/rby.png" alt="Preview 4">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/1758583655342~2.jpg" alt="Preview 5">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/rby.png" alt="Preview 6">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/1758583655342~2.jpg" alt="Preview 7">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/rby.png" alt="Preview 8">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/1758583655342~2.jpg" alt="Preview 9">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/rby.png" alt="Preview 10">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/1758583655342~2.jpg" alt="Preview 11">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/rby.png" alt="Preview 22">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/1758583655342~2.jpg" alt="Preview 13">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/rby.png" alt="Preview 14">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/1758583655342~2.jpg" alt="Preview 15">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/rby.png" alt="Preview 16">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/1758583655342~2.jpg" alt="Preview 17">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/rby.png" alt="Preview 18">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/1758583655342~2.jpg" alt="Preview 19">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="img/rby.png" alt="Preview 20">
-                        </div>
                     </div>
-
+                    
                     <button class="carousel-btn carousel-btn-prev" onclick="moveCarousel(-1)">&#10094;</button>
                     <button class="carousel-btn carousel-btn-next" onclick="moveCarousel(1)">&#10095;</button>
-
+                    
                     <button class="carousel-btn-fullscreen" onclick="toggleFullscreen()" id="fullscreenBtn">
                         <svg id="expandIcon" viewBox="0 0 24 24">
-                            <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+                            <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
                         </svg>
                         <svg id="compressIcon" viewBox="0 0 24 24" style="display: none;">
-                            <path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z" />
+                            <path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/>
                         </svg>
                     </button>
-
+                    
                     <div class="carousel-counter">
                         <span id="currentSlideNumber">1</span> / <span id="totalSlides"></span>
                     </div>
                 </div>
+                <!-- ========== AKHIR KODE BARU CAROUSEL STRUCTURE ========== -->
 
                 <div class="card-description">
                     <h1 class="heading-description">Description</h1>
@@ -1184,8 +1148,8 @@
                         fiery reds to dreamy pinks, it's all here to spark your imagination. Perfect for pixel art, home
                         decor, or vibrant cities, these colorful Minecraft blocks help every builder new or pro bring
                         their vision to life. Want your Minecraft builds to shine? Add flair and personality with vivid
-                        wool shades. Designed for fun and impact, this set makes your ideas pop. It’s more than just
-                        blocks it’s your creative playground. Start building brilliance today one color at a time.
+                        wool shades. Designed for fun and impact, this set makes your ideas pop. It's more than just
+                        blocks it's your creative playground. Start building brilliance today one color at a time.
                     </p>
                 </div>
             </div>
@@ -1281,7 +1245,8 @@
                 <h3 class="download-group-title">Free Version</h3>
                 <div class="download-buttons">
                     <a href="img/mnmlst_rth_glb_cn.png" class="btn-download btn-free">
-                        <img src="img/mnmlst_rth_glb_cn.png" alt="PlanetMinecraft icon" class="icon-btn">
+                        <img src="img/mnmlst_rth_glb_cn.png" alt="PlanetMinecraft icon"
+                            class="icon-btn">
                         <span>Free Version (PlanetMinecraft)</span>
                     </a>
                 </div>
@@ -1310,8 +1275,8 @@
             <h2 class="heading-discussion">Join the Discussion</h2>
             <p class="discussion-description">Need help, found issues, or have improvement ideas?</p>
             <div class="discussion-buttons">
-                <a href="https://www.instagram.com/gigimerah?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                    class="btn-discussion btn-instagram">
+                <a href="https://www.instagram.com/direct/t/104263294306491" class="btn-discussion btn-instagram"
+                    target="_blank">
                     <img src="img/IG.png" alt="Instagram" class="discussion-icon">
                     <span>Get support & share feedback on Instagram!</span>
                 </a>
@@ -1319,119 +1284,121 @@
         </div>
     </section>
 
+    <!-- ========== KODE BARU: JAVASCRIPT CAROUSEL ========== -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const wrapper = document.getElementById('carouselWrapper');
+        const totalSlides = slides.length;
+        const currentSlideNumber = document.getElementById('currentSlideNumber');
+        const totalSlidesDisplay = document.getElementById('totalSlides');
+        const carouselContainer = document.querySelector('.carousel-container');
+        const expandIcon = document.getElementById('expandIcon');
+        const compressIcon = document.getElementById('compressIcon');
+        let isFullscreen = false;
+
+        // Set total slides display
+        totalSlidesDisplay.textContent = totalSlides;
+
+        function updateCarousel() {
+            wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+            currentSlideNumber.textContent = currentSlide + 1;
+        }
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+            
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+            
+            updateCarousel();
+        }
+
+        // Fullscreen toggle function
+        function toggleFullscreen() {
+            if (!isFullscreen) {
+                // Enter fullscreen
+                if (carouselContainer.requestFullscreen) {
+                    carouselContainer.requestFullscreen();
+                } else if (carouselContainer.webkitRequestFullscreen) {
+                    carouselContainer.webkitRequestFullscreen();
+                } else if (carouselContainer.msRequestFullscreen) {
+                    carouselContainer.msRequestFullscreen();
+                }
+                carouselContainer.classList.add('fullscreen');
+                expandIcon.style.display = 'none';
+                compressIcon.style.display = 'block';
+                isFullscreen = true;
+            } else {
+                // Exit fullscreen
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+                carouselContainer.classList.remove('fullscreen');
+                expandIcon.style.display = 'block';
+                compressIcon.style.display = 'none';
+                isFullscreen = false;
+            }
+        }
+
+        // Listen for fullscreen change events (when user presses ESC)
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+        document.addEventListener('msfullscreenchange', handleFullscreenChange);
+
+        function handleFullscreenChange() {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+                carouselContainer.classList.remove('fullscreen');
+                expandIcon.style.display = 'block';
+                compressIcon.style.display = 'none';
+                isFullscreen = false;
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                moveCarousel(-1);
+            } else if (e.key === 'ArrowRight') {
+                moveCarousel(1);
+            } else if (e.key === 'f' || e.key === 'F') {
+                toggleFullscreen();
+            } else if (e.key === 'Escape' && isFullscreen) {
+                toggleFullscreen();
+            }
+        });
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carouselContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carouselContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                moveCarousel(1);
+            }
+            if (touchEndX > touchStartX + 50) {
+                moveCarousel(-1);
+            }
+        }
+    </script>
+    <!-- ========== AKHIR KODE BARU JAVASCRIPT CAROUSEL ========== -->
+
 </body>
-<script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-slide');
-    const wrapper = document.getElementById('carouselWrapper');
-    const totalSlides = slides.length;
-    const currentSlideNumber = document.getElementById('currentSlideNumber');
-    const totalSlidesDisplay = document.getElementById('totalSlides');
-    const carouselContainer = document.querySelector('.carousel-container');
-    const expandIcon = document.getElementById('expandIcon');
-    const compressIcon = document.getElementById('compressIcon');
-    let isFullscreen = false;
-
-    // Set total slides display
-    totalSlidesDisplay.textContent = totalSlides;
-
-    function updateCarousel() {
-        wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
-        currentSlideNumber.textContent = currentSlide + 1;
-    }
-
-    function moveCarousel(direction) {
-        currentSlide += direction;
-
-        if (currentSlide < 0) {
-            currentSlide = totalSlides - 1;
-        } else if (currentSlide >= totalSlides) {
-            currentSlide = 0;
-        }
-
-        updateCarousel();
-    }
-
-    // Fullscreen toggle function
-    function toggleFullscreen() {
-        if (!isFullscreen) {
-            // Enter fullscreen
-            if (carouselContainer.requestFullscreen) {
-                carouselContainer.requestFullscreen();
-            } else if (carouselContainer.webkitRequestFullscreen) {
-                carouselContainer.webkitRequestFullscreen();
-            } else if (carouselContainer.msRequestFullscreen) {
-                carouselContainer.msRequestFullscreen();
-            }
-            carouselContainer.classList.add('fullscreen');
-            expandIcon.style.display = 'none';
-            compressIcon.style.display = 'block';
-            isFullscreen = true;
-        } else {
-            // Exit fullscreen
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.webkitExitFullscreen) {
-                document.webkitExitFullscreen();
-            } else if (document.msExitFullscreen) {
-                document.msExitFullscreen();
-            }
-            carouselContainer.classList.remove('fullscreen');
-            expandIcon.style.display = 'block';
-            compressIcon.style.display = 'none';
-            isFullscreen = false;
-        }
-    }
-
-    // Listen for fullscreen change events (when user presses ESC)
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-    document.addEventListener('msfullscreenchange', handleFullscreenChange);
-
-    function handleFullscreenChange() {
-        if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-            carouselContainer.classList.remove('fullscreen');
-            expandIcon.style.display = 'block';
-            compressIcon.style.display = 'none';
-            isFullscreen = false;
-        }
-    }
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            moveCarousel(-1);
-        } else if (e.key === 'ArrowRight') {
-            moveCarousel(1);
-        } else if (e.key === 'f' || e.key === 'F') {
-            toggleFullscreen();
-        } else if (e.key === 'Escape' && isFullscreen) {
-            toggleFullscreen();
-        }
-    });
-
-    // Touch/swipe support for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    carouselContainer.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    });
-
-    carouselContainer.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-
-    function handleSwipe() {
-        if (touchEndX < touchStartX - 50) {
-            moveCarousel(1);
-        }
-        if (touchEndX > touchStartX + 50) {
-            moveCarousel(-1);
-        }
-    }
-
-</script>
 
 </html>
