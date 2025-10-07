@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GigiMerah Studio - UI/UX Learner • Digital Asset Creator</title>
+    <link href="https://fonts.cdnfonts.com/css/profontwindows" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/profontwindows');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "ProfontWindows", "JetBrains Mono", monospace;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #000000;
+        }
+
+        /* Contact Section */
+        section.contact {
+            background-image: url("img/cybrpnk_cntrl_rm_n_nnglw.png");
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 68px 64px 68px 64px;
+            position: relative;
+        }
+
+        /* Contact Section - Gradient Overlay */
+        section.contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #000000 0%, #00000096 25%, #00000096 85%, #000000 100%);
+            z-index: 1;
+        }
+
+        /* Contact Content - Ensure it appears above overlay */
+        .contact > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: #00aeae;
+            font-family: 'ProFontWindows', sans-serif;
+        }
+
+        .contact-subtitle {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 48px;
+            font-family: 'ProFontWindows', sans-serif;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form:hover {
+            border-color: rgba(0, 174, 174, 0.5);
+            box-shadow: 0 0 40px rgba(0, 174, 174, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #00aeae;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-family: 'ProFontWindows', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: #ffffff;
+            font-size: 0.9375rem;
+            font-family: 'ProFontWindows', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #00aeae;
+            background: rgba(0, 174, 174, 0.05);
+            box-shadow: 0 0 0 3px rgba(0, 174, 174, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-send {
+            width: 100%;
+            background: linear-gradient(180deg, #00aeae, #0098ff);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            font-family: 'ProFontWindows', sans-serif;
+            text-decoration: none;
+            border: 2px solid rgb(255, 255, 255);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-send:hover {
+            background: linear-gradient(180deg, #00aeae50, #0098ff60);
+            box-shadow: 0 0px 16px rgba(0, 174, 174, 1);
+            transform: translateY(-2px);
+        }
+
+        /* Contact Socials */
+        .contact-socials {
+            background: rgba(255, 255, 255, 0.05);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-socials:hover {
+            border-color: rgba(0, 174, 174, 0.5);
+            box-shadow: 0 0 40px rgba(0, 174, 174, 0.2);
+        }
+
+        .contact-socials h3 {
+            font-family: 'ProFontWindows', sans-serif;
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .socials-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .socials-list li a {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'ProFontWindows', sans-serif;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .socials-list li a:hover {
+            background: rgba(0, 174, 174, 0.1);
+            border-color: #00aeae;
+            color: #00aeae;
+            transform: translateX(8px);
+            box-shadow: 0 0 20px rgba(0, 174, 174, 0.3);
+        }
+
+        .socials-list li a img,
+        .socials-list li a svg {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            section.contact {
+                padding: 48px 24px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .contact h2 {
+                font-size: 1.75rem;
+            }
+
+            .contact-form,
+            .contact-socials {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p class="contact-subtitle">Let's connect and collaborate on creative projects</p>
+
+        <div class="contact-container">
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-send">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-socials">
+                <h3>Connect</h3>
+                <ul class="socials-list">
+                    <li>
+                        <a href="https://instagram.com/yourusername" target="_blank">
+                            <img src="img/ChatGPT Image Sep 19, 2025, 09_19_35 PM.png" alt="Instagram">
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://discord.com/users/YOUR_USER_ID" target="_blank">
+                            <img src="img/66e278299a53f5bf88615e90_Symbol.svg" alt="Discord">
+                            Discord DM
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:your@email.com">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                            Email
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

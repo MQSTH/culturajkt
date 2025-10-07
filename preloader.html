@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preloader</title>
+    <link href="https://fonts.cdnfonts.com/css/profontwindows" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/profontwindows');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "ProfontWindows", "JetBrains Mono", monospace;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .preloader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            border-top: 1px solid rgb(255, 255, 255);
+            background: linear-gradient(180deg, rgb(0, 0, 0, 0.1) 0%, rgb(0, 0, 0, 0.1));
+            backdrop-filter: blur(10px);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9998;
+        }
+
+        .preloader-wrapper.hide {
+            transform: translateY(100%);
+            pointer-events: none;
+            transition: transform 0.8s ease;
+        }
+
+        .top-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .top-progress-bar.hide {
+            opacity: 0;
+        }
+
+        .top-progress-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #c20000, #750000);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .preloader-content {
+            text-align: center;
+        }
+
+        .logo-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .percentage {
+            color: white;
+            font-size: 32px;
+            margin-top: 10px;
+            opacity: 0.9;
+            font-weight: bold;
+        }
+
+        .main-content {
+            padding: 50px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .main-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .content-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 600px;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader-wrapper" id="preloaderWrapper">
+        <div class="top-progress-bar">
+            <div class="top-progress-fill" id="topProgressFill"></div>
+        </div>
+        
+        <div class="preloader-content">
+            <div class="logo-container">
+                <img src="img/isometric 1bagi1.png" alt="Logo">
+            </div>
+            <div class="percentage" id="percentage">0%</div>
+        </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <h1>Selamat Datang! 🎉</h1>
+        <p>Preloader berhasil bekerja dengan baik. Halaman ini muncul setelah loading selesai.</p>
+        
+        <div class="content-box">
+            <h2>Konten Utama</h2>
+            <p>Ini adalah contoh konten yang muncul setelah preloader selesai. Anda bisa mengganti ini dengan konten website Anda.</p>
+        </div>
+
+        <div class="content-box">
+            <h2>Fitur Preloader</h2>
+            <p>✅ Progress bar hijau di atas<br>
+            ✅ Logo/gambar custom<br>
+            ✅ Persentase loading<br>
+            ✅ Transisi smooth ke konten</p>
+        </div>
+    </div>
+
+    <script>
+// Nonaktifkan scroll saat preloader aktif
+document.documentElement.style.overflow = 'hidden';
+document.body.style.overflow = 'hidden';
+
+let progress = 0;
+const percentageEl = document.getElementById('percentage');
+const topProgressFillEl = document.getElementById('topProgressFill');
+const topProgressBar = document.querySelector('.top-progress-bar');
+const preloaderWrapper = document.getElementById('preloaderWrapper');
+
+const interval = setInterval(() => {
+    progress += Math.random() * 15;
+    if (progress >= 100) {
+        progress = 100;
+        clearInterval(interval);
+        
+        // Sembunyikan progress bar dengan fade out
+        topProgressBar.classList.add('hide');
+        
+        // Gerakkan preloader ke bawah dengan translateY
+        setTimeout(() => {
+            preloaderWrapper.classList.add('hide');
+            
+            // Aktifkan scroll setelah animasi translateY selesai (0.8s)
+            setTimeout(() => {
+                document.documentElement.style.overflow = 'auto';
+                document.body.style.overflow = 'auto';
+            }, 800); // Sesuai dengan transition: transform 0.8s
+        }, 500);
+    }
+    const currentProgress = Math.floor(progress);
+    percentageEl.textContent = currentProgress + '%';
+    topProgressFillEl.style.width = currentProgress + '%';
+}, 200);
+    </script>
+</body>
+</html>

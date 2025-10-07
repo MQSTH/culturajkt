@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GigiMerah - UI/UX Learner • Digital Asset Creator</title>
   <link rel="shortcut icon" href="img/_a5c0d61c-d228-4a95-945b-c146132bfdb3.jpeg" type="image/x-icon">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
   <link href="https://fonts.cdnfonts.com/css/profontwindows" rel="stylesheet">
   <style>
     @import url('https://fonts.cdnfonts.com/css/profontwindows');
@@ -31,27 +30,33 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: linear-gradient(180deg, #7289da, #5865f2);
+      background: linear-gradient(180deg, #ff0000, #ff0000);
       color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
+      box-shadow: 0px 4px 0px rgb(255, 255, 255);
+      padding: 12px 25px;
+      border-radius: 8px;
       font-weight: 600;
       font-size: 0.875rem;
-      font-family: "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: 'ProFontWindows', sans-serif;
       transition: all 0.3s ease;
-      border: 2px solid #5865f2;
       text-decoration: none;
     }
 
     .btn-cta:hover {
-      background: linear-gradient(180deg, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+      background: linear-gradient(180deg, #c20000, #750000);
       color: #ffffff;
-      box-shadow: 0 0px 16px rgba(88, 101, 242, 1);
+      box-shadow: 0px 0px 0px rgb(255, 255, 255);
     }
 
-    .discord-icon {
+    .youtube-icon {
+      width: auto;
+      height: 16px;
+    }
+
+    .youtube-icon {
       width: 16px;
       height: 16px;
+      object-fit: contain;
     }
 
     /* Navigation */
@@ -130,6 +135,11 @@
 
     .scrolled .nav-link.active::after {
       width: 100%;
+    }
+
+    .nav-link img {
+      height: 16px;
+      vertical-align: middle;
     }
 
     /* Hero Section */
@@ -373,6 +383,7 @@
       aspect-ratio: 16 / 9;
       width: 100%;
       object-fit: cover;
+      display: block;
       transition: all 0.3s ease;
     }
 
@@ -434,6 +445,7 @@
 </head>
 
 <body>
+
   <!-- Navigation Bar -->
   <header>
     <nav class="navbar" id="navbar">
@@ -441,12 +453,13 @@
         <li class="nav-item"><a href="#home" class="nav-link active">HOME</a></li>
         <li class="nav-item"><a href="#about" class="nav-link">ABOUT</a></li>
         <li class="nav-item"><a href="#projects" class="nav-link">PROJECTS</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">PRODUCTS</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">PRODUCTS <img src="img/PowerPoint_Logo_2025.svg"
+              alt="PowerPoint"> <img src="img/android-icon-192x192.png" alt="Minecraft"></a></li>
         <li class="nav-item"><a href="#news" class="nav-link">NEWS</a></li>
       </ul>
-      <a href="https://discord.gg/TquSR47n" class="btn-cta">
-        <img src="img/66e278299a53f5bf88615e90_Symbol.svg" alt="Discord" class="discord-icon">
-        Join Community
+      <a href="https://youtube.com/@gigimerah" class="btn-cta">
+        <img src="img/Exclude1.png" alt="Youtube" class="youtube-icon">
+        Subscribe
       </a>
     </nav>
   </header>
@@ -488,7 +501,7 @@
       </div>
 
       <div class="project-card">
-        <img src="img/Section.png" alt="Travel app interface">
+        <img src="img/download (2).jpg" alt="Travel app interface">
         <div class="project-overlay">
           <a href="#" class="btn-view">Lihat</a>
         </div>
@@ -534,13 +547,13 @@
         </div>
       </div>
     </div>
-
     <div class="news-more">
       <a href="#" class="btn-more">See More</a>
     </div>
   </section>
 
   <script>
+
     window.addEventListener('scroll', function () {
       const navbar = document.getElementById('navbar');
       if (window.scrollY > 50) {

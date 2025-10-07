@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    section.community {
+      background-image: url("img/Frame\ 58.png");
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: top;
+      background-repeat: no-repeat;
+      padding: 68px 64px 68px 64px;
+      position: relative;
+    }
+
+    /* Community Section - Gradient Overlay */
+    section.community::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #000000 0%, #00000096 25%, #00000096 85%, #000000 100%);
+      z-index: 1;
+    }
+
+    /* Community Content - Ensure it appears above overlay */
+    .community>* {
+      position: relative;
+      z-index: 2;
+    }
+
+    .community h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 16px;
+      color: #00aeae;
+      font-family: 'ProFontWindows', sans-serif;
+    }
+
+    .community-subtitle {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 48px;
+      font-family: 'ProFontWindows', sans-serif;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .support-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .btn-support {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 28px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      font-family: 'ProFontWindows', sans-serif;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border: 2px solid transparent;
+    }
+
+    .btn-youtube {
+      background: linear-gradient(180deg, #ff0000, #ff0000);
+      color: #ffffff;
+      border-color: rgb(249, 0, 0);
+    }
+
+    .btn-youtube:hover {
+      background: linear-gradient(180deg, #c20000, #750000);
+      box-shadow: 0 0px 16px rgb(255, 0, 0);
+      border-color: #ff0000;
+    }
+
+    .btn-instagram {
+      background: linear-gradient(180deg, #FC01D8, #FF005F);
+      color: #ffffff;
+      border-color: #FF005F;
+    }
+
+    .btn-instagram:hover {
+      box-shadow: 0 0px 16px #FF005F;
+    }
+
+    .support-icon {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    .support-note {
+      text-align: center;
+      color: #ffffff;
+      font-family: 'ProFontWindows', sans-serif;
+      font-size: 0.9375rem;
+      opacity: 0.85;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .link-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #00aeae;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .link-inline:hover {
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(0, 174, 174, 0.5);
+    }
+
+    .note-icon {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      vertical-align: middle;
+    }
+</style>
+
+<body>
+    <section id="community" class="community">
+    <h2>Join the Journey</h2>
+    <p class="community-subtitle">Follow my design process, tutorials, and creative experiments.</p>
+
+    <div class="support-buttons">
+      <a href="https://youtube.com/@gigimerah" class="btn-support btn-youtube">
+        <img src="img/Exclude1.png" alt="YouTube" class="support-icon">
+        Subscribe on YouTube
+      </a>
+
+      <a href="https://instagram.com/gigimerah" class="btn-support btn-instagram">
+        <img src="img/IG.png" alt="Instagram" class="support-icon">
+        Follow on Instagram
+      </a>
+    </div>
+
+    <p class="support-note">
+      Want to support my work? Check out my
+      <a href="https://gumroad.com/gigimerah" class="link-inline">
+        <img src="img/gmrd.svg" alt="Gumroad" class="note-icon">
+        digital assets
+      </a>,
+      <a href="https://patreon.com/gigimerah" class="link-inline">
+        <img src="img/ptrn.ico" alt="Patreon" class="note-icon">
+        become a patron
+      </a>, or visit
+      <a href="https://lynk.id/gigimerah" class="link-inline">
+        <img src="img/lynk.webp" alt="Lynk.id" class="note-icon">
+        all links
+      </a>
+    </p>
+  </section>
+</body>
+
+</html>
